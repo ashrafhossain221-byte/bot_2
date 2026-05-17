@@ -7,5 +7,8 @@ cmds = [
   "/app/venv/bin/pip install -r requirements.txt"
 ]
 
+[variables]
+PATH = "/app/venv/bin:$PATH"
+
 [start]
-cmd = "/app/venv/bin/uvicorn main:app --host 0.0.0.0 --port $PORT"
+cmd = "uvicorn main:app --host 0.0.0.0 --port $PORT"
