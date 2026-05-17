@@ -1,0 +1,50 @@
+# Web framework
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+
+# Database
+sqlalchemy==2.0.36
+psycopg2-binary==2.9.10
+alembic==1.14.0
+
+# Pydantic / settings
+pydantic==2.10.3
+pydantic-settings==2.6.1
+
+# HTTP client (AI API calls, Telegram)
+httpx==0.28.1
+
+# Encryption
+cryptography==44.0.0
+
+# Redis
+redis==5.2.1
+
+# Celery + beat scheduler
+celery==5.4.0
+celery[redis]==5.4.0
+
+# Environment
+python-dotenv==1.0.1
+
+# Multimodal (Phase 4)
+python-multipart==0.0.20      # required for FastAPI file uploads
+pytesseract==0.3.13           # image OCR (needs Tesseract-OCR binary on system)
+Pillow==11.0.0                # image processing
+pymupdf==1.25.1               # PDF extraction (imports as fitz)
+python-docx==1.1.2            # DOCX extraction
+# openai-whisper==20240930    # uncomment for local whisper (large download)
+
+# Phase 6 — Language detection (optional, falls back to heuristics if missing)
+langdetect==1.0.9
+
+# Phase 7 — RAG Knowledge Base
+# sentence-transformers gives best retrieval quality (local, free).
+# If not installed, the system falls back to the AI provider /embeddings API,
+# then to keyword-TF-IDF — so it works out of the box either way.
+# Uncomment on Railway if you have enough RAM (needs ~500 MB):
+# sentence-transformers==3.3.1
+# torch==2.5.1+cpu   # CPU-only torch for Railway
+
+# ChromaDB (optional future upgrade — not used in Phase 7):
+# chromadb==0.5.23
